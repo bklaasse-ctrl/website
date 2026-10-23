@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bob Klaasse | Interim project- en programmamanager</title>
+<meta name="description" content="Zelfstandig interim project- en programmamanager voor financiële instellingen en (semi-)overheidsorganisaties. Regulatory change, data- en IT-transformaties, agile delivery.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bob Klaasse | Interim project- en programmamanager">
+<meta property="og:description" content="Zelfstandig interim project- en programmamanager voor financiële instellingen en (semi-)overheidsorganisaties.">
+<meta property="og:url" content="https://bobklaasse.nl/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231D4A44'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F7F7F5' text-anchor='middle'%3EBK%3C/text%3E%3C/svg%3E">
+
+<style>
+  :root {
+    --paper:      #F7F7F5;
+    --ink:        #17181A;
+    --muted:      #6B6D70;
+    --rule:       #DEDEDA;
+    --accent:     #1D4A44;
+
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --measure: 34rem;
+    --gutter: 2.5rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 61rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(29, 74, 68, 0.3);
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-bottom-color: var(--accent); }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---- Titelblad ---- */
+
+  .masthead {
+    padding: clamp(3.5rem, 10vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem);
+  }
+
+  .kicker {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.4rem;
+  }
+
+  .name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  .role {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin: 0.9rem 0 0;
+    letter-spacing: 0.01em;
+  }
+
+  /* ---- Secties: label links, inhoud rechts ---- */
+
+  .section {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: var(--gutter);
+    padding: 2.75rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section__label {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+  }
+
+  .section__body {
+    max-width: var(--measure);
+  }
+
+  .section__body > :first-child { margin-top: 0; }
+  .section__body > :last-child  { margin-bottom: 0; }
+
+  .section__body p { margin: 0 0 1.15rem; }
+
+  /* ---- Dienstenlijst ---- */
+
+  .services {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  .services li {
+    margin: 0 0 1.4rem;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--rule);
+  }
+  .services li:last-child { margin-bottom: 0; }
+
+  .services strong {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  /* ---- Opdrachtgeversregister ---- */
+
+  .register {
+    margin: 1.5rem 0 0;
+  }
+
+  .register__row {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: 1.25rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .register__row:first-child { border-top: 1px solid var(--rule); }
+
+  .register dt {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.005em;
+  }
+
+  .register dd {
+    margin: 0;
+    font-size: 0.98rem;
+    color: var(--ink);
+  }
+
+  .period {
+    display: block;
+    font-weight: 400;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    margin-top: 0.15rem;
+  }
+
+  .plain {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .plain li { margin: 0 0 0.3rem; }
+  .plain li:last-child { margin-bottom: 0; }
+
+  /* ---- Contactgegevens ---- */
+
+  .contact {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.55rem 1.25rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+
+  .contact dt {
+    color: var(--muted);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding-top: 0.15rem;
+  }
+
+  .contact dd { margin: 0; }
+
+  /* ---- Voettekst ---- */
+
+  .colophon {
+    border-top: 1px solid var(--rule);
+    padding: 2rem 0 3.5rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* ---- Smal scherm ---- */
+
+  @media (max-width: 46rem) {
+    body { font-size: 16px; }
+
+    .section {
+      grid-template-columns: 1fr;
+      gap: 1.1rem;
+      padding: 2.25rem 0;
+    }
+
+    .section__label {
+      position: static;
+      margin: 0;
+    }
+
+    .register__row,
+    .contact {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
+
+    .register__row { padding: 1rem 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+
+  /* ---- Afdrukken ---- */
+
+  @media print {
+    body { background: #fff; font-size: 11pt; }
+    .section { break-inside: avoid; border-top: 1px solid #ccc; }
+    .section__label { position: static; }
+    a { border-bottom: none; color: var(--ink); }
+    .colophon { display: none; }
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="kicker">Zelfstandig ondernemer sinds 2012</p>
+    <h1 class="name">Bob Klaasse</h1>
+    <p class="role">Interim project- en programmamanagement</p>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <h2 class="section__label">Profiel</h2>
+      <div class="section__body">
+        <p>Ik ben zelfstandig ondernemer en werk sinds 2012 als interim project- en programmamanager voor financiële instellingen en (semi-)overheidsorganisaties. Vanuit mijn eigen onderneming voer ik opdrachten uit op het snijvlak van business, IT en data: complexe regelgeving en strategische doelen vertalen naar werkende systemen, processen en data-oplossingen.</p>
+        <p>Mijn kracht ligt in het structureren van ambiguïteit: stakeholders op één lijn brengen, governance neerzetten en versnipperde initiatieven omzetten in concrete resultaten, ook onder hoge tijdsdruk en toezichthouderscrutiny.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__label">Diensten</h2>
+      <div class="section__body">
+        <p>Ik lever interim-capaciteit op project-, programma- en deliveryniveau, op resultaatgerichte basis. Typische opdrachten:</p>
+        <ul class="services">
+          <li>
+            <strong>Programmamanagement van regulatory change</strong>
+            Implementatie van wet- en regelgeving zoals IRRBB, MiFID II, IFRS 9, FATCA en resolution planning, inclusief governance en stakeholdermanagement op MT- en boardniveau.
+          </li>
+          <li>
+            <strong>Project- en deliverymanagement van data- en IT-transformaties</strong>
+            Datawarehousing, rapportageplatformen, ESG-data en workflow-applicaties; van strategie naar uitvoerbare werkpakketten.
+          </li>
+          <li>
+            <strong>Agile delivery en coaching</strong>
+            Pragmatische inzet van Scrum en PRINCE2, inclusief het begeleiden van teams in nieuwe werkwijzen.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__label">Track record</h2>
+      <div class="section__body">
+        <p>De afgelopen 20 jaar heb ik opdrachten uitgevoerd voor onder meer:</p>
+        <dl class="register">
+          <div class="register__row">
+            <dt>Rabobank<span class="period">2026 - heden</span></dt>
+            <dd>Interim projectmanager resolution planning en waarderingscapaciteiten (SRB EoVC)</dd>
+          </div>
+          <div class="register__row">
+            <dt>FMO<span class="period">2022 - 2026</span></dt>
+            <dd>Projectmanager strategische initiatieven (ESG-data, productontwikkeling, datastrategie)</dd>
+          </div>
+          <div class="register__row">
+            <dt>ING Group<span class="period">2020 - 2022</span></dt>
+            <dd>Programmamanager groepsbreed IRRBB-regulatory-changeprogramma</dd>
+          </div>
+          <div class="register__row">
+            <dt>MUFG Europe<span class="period">2017 - 2020</span></dt>
+            <dd>Agile projectmanager regulatory- en dataplatformen (MiFID II, renterisicoplatform)</dd>
+          </div>
+          <div class="register__row">
+            <dt>Rabobank<span class="period">2012 - 2017</span></dt>
+            <dd>Senior rollen binnen grote regulatory-programma's (IFRS 9, FATCA, Volcker)</dd>
+          </div>
+          <div class="register__row">
+            <dt>Eerder<span class="period">2006 - 2012</span></dt>
+            <dd>European Space Agency (ESA), ING Group, KPN en LEGO via Sogeti en Accenture</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__label">Opleiding &amp; certificering</h2>
+      <div class="section__body">
+        <dl class="register">
+          <div class="register__row">
+            <dt>Opleiding</dt>
+            <dd>MSc Informatiekunde, Vrije Universiteit Amsterdam, 2006</dd>
+          </div>
+          <div class="register__row">
+            <dt>Certificering</dt>
+            <dd>
+              <ul class="plain">
+                <li>Professional Scrum Master II (PSM II)</li>
+                <li>PRINCE2 Practitioner</li>
+                <li>Agile Business Expert (Agile Coach)</li>
+                <li>Agile Service Projects</li>
+                <li>P3O Foundation</li>
+                <li>ITIL</li>
+                <li>Co-Active Coaching Fundamentals</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__label">Werkwijze</h2>
+      <div class="section__body">
+        <p>Ik werk op opdrachtbasis, voor eigen rekening en risico, met heldere afspraken over scope, resultaat en duur. Opdrachten voer ik zelfstandig uit vanuit mijn eigen onderneming, en ik investeer doorlopend in mijn vakkennis en certificeringen.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__label">Contact</h2>
+      <div class="section__body">
+        <dl class="contact">
+          <dt>E-mail</dt>
+          <dd><a href="mailto:mail@bobklaasse.nl">mail@bobklaasse.nl</a></dd>
+
+          <dt>Telefoon</dt>
+          <dd><a href="tel:+31619225092">+31 6 19 22 50 92</a></dd>
+
+          <dt>LinkedIn</dt>
+          <dd><a href="https://www.linkedin.com/in/bklaasse" rel="noopener">linkedin.com/in/bklaasse</a></dd>
+
+          <dt>KvK</dt>
+          <dd>56454473</dd>
+
+          <dt>BTW-id</dt>
+          <dd>NL002124641B11</dd>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="colophon">
+    <p>&copy; <span id="jaar">2026</span> Bob Klaasse</p>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('jaar').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
